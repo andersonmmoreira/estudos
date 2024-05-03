@@ -3,10 +3,6 @@ p {
     font-size: 25px ;
 
 }
-h1 {
-    color: red;
-    font-size: 50px;
-}
 img {
     width: 200px;
 }
@@ -18,4 +14,19 @@ div{
     height: 100vh;
     margin: 0;
     text-align: center;
+}
+.titulo {
+
+    color: blue;
+    font-size: 60px;
+}
+.texto {
+    color: red;
+    font-size: 35px;
+}
+
+.botao { 
+    font-size: 35px;
+    color: blueviolet;
+    background-color: aqua;
 }
