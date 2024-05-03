@@ -3,9 +3,7 @@ p {
     font-size: 25px ;
 
 }
-img {
-    width: 200px;
-}
+
 div{
     display: flex;
     justify-content: center;
@@ -29,4 +27,13 @@ div{
     font-size: 35px;
     color: blueviolet;
     background-color: aqua;
+    border: 5px solid;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 50px;
+    overflow: hidden;
 }
