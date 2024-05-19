@@ -55,7 +55,8 @@ body {
     flex-wrap: wrap;
     padding: 10px;
     background-color: #000;
-    background: linear-gradient(#fff, #000); 
+    background: linear-gradient(#fff, #000);
+    text-shadow: 2px 2px 2px #f00; 
 }
 
 
@@ -181,7 +182,4 @@ nav a:hover {
     border-radius: 20px;
     text-shadow: 1px 1px 1px #000;
     padding: 7px;
-}
-#dare {
-    text-shadow: 2px 2px 2px #f00;
 }
