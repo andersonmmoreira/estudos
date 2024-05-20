@@ -1,0 +1,29 @@
+body {
+    background-color: #ccc;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 50vw;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+tr:nth-child(even) {
+    background-color: #ccc;
+}
+tr:hover {
+    background-color: #ddd;
+}
+.table {
+    align-items: center;
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    min-height: 100vh;
+}
