@@ -1,5 +1,6 @@
 body {
     background-color: #ccc;
+    font-family: Arial, Helvetica, sans-serif;
 }
 table {
     width: 100%;
@@ -26,4 +27,7 @@ tr:hover {
     justify-content: center; 
     flex-direction: column;
     min-height: 100vh;
+}
+#list {
+    text-shadow: 1px 1px 1px #000;
 }
