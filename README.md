@@ -1,2 +1,2 @@
-# FullStackDC
-Curso FullStack Digital College
+# Estudos
+Voltado para estudos de progamação
