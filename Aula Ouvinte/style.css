@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    color: white;
+}
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: yellow;
+    height: 30px;
+    top: 0px
+}
+header {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: fixed;
+    z-index: 1;
+    right: 10px;
+    bottom: 10px;
+}
+
+#animacao {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+#animacao-relative {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+footer {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    position: static;
+}
