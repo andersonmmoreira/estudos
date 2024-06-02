@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="top">Meu Primeiro Formulário</h1>
+
+    <h2 class="cadastro">Area de Login</h2>
+    <!-- Text , Radio , email , password , checkbox , submit ( tipos de input ) -->
+    <form class="cadastro" action="login.html" method="GET">
+      <input type="email" name="usuario" value="Seu E-Mail" /><br />
+      <input type="password" name="senha" required /><br />
+
+      <div class="radio-group">
+        <div>
+          <input type="radio" id="opcao1" name="opcao" value="opcao1" />
+          <label for="opcao1">Cliente</label>
+        </div>
+        <div>
+          <input type="radio" id="opcao2" name="opcao" value="opcao2" />
+          <label for="opcao2">Colaborador</label>
+        </div>
+      </div>
+
+      <input type="submit" value="Enviar Dados" required />
+    </form>
+
+    <h2 class="buy">Area de Compras</h2>
+    <form class="buy" action="login.html" method="POST">
+      <select name="ordenacao" id="">
+        <option value="">Mais Vendidos</option>
+        <option value="">Recentes</option>
+
+        <input type="submit" value="Finalizar" required />
+      </select>
+    </form>
+
+    <h2 class="date">Data de Envio</h2>
+    <form action="login.html"></form>
+
+    <div class="date">
+      <input type="date" /><br />
+      <input type="submit" value="Selecionar" />
+    </div>
+  </body>
+</html>

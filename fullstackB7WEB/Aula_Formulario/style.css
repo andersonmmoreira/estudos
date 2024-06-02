@@ -1,0 +1,121 @@
+
+.cadastro {
+  margin: 10px;
+  padding: 10px;
+  background-color: antiquewhite;
+  text-shadow: 1px 1px 1px #000;
+  color: white;
+  border-radius: 20px;
+  border: solid 3px #000;
+  flex-direction: column;
+  display: flex;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  background: linear-gradient(to right, rgb(77, 236, 72) , yellow);
+}
+
+.buy {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(150, 133, 133);
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 20px;
+  border: dashed 3px #000;
+  flex-direction: column;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+#top {
+  background-color: black;
+  color: aquamarine;
+  background: linear-gradient(black, #ccc);
+  text-shadow: 2px 2px 1px #000;
+  border-radius: 10px;
+  border: 5px solid;
+  border-color: black; /* cor de backup para navegadores que não suportam border-image */
+  border-image: linear-gradient(to top, #ccc, black) 1;
+  padding: 10px;
+  margin: 10px;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  text-shadow: 1px 1px 1px #000;
+  padding: 2px;
+  margin: 2px;
+  color: rgb(255, 0, 0);
+}
+
+.date {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(150, 133, 133);
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 20px;
+  flex-direction: column;
+  display: flex;
+  border: 5px solid;
+  border-color: black; /* cor de backup para navegadores que não suportam border-image */
+  border-image: linear-gradient(to top, #ccc, black) 1;
+}
+
+#button {
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 50px;
+  height: 50px;
+}
+#button:hover {
+  background-color: aqua;
+  height: 100px;
+  width: 100px;
+  transition: 3s;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+fieldset {
+  background-color: bisque;
+  margin-bottom: 20px ;
+  border: 2px solid red;
+}
+
+legend {
+  background-color: bisque;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+label {
+  background-color: bisque;
+}
+
+
+/* teste animation */
+.my-element {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: wobble; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
