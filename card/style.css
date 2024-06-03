@@ -103,6 +103,7 @@ body {
     box-shadow: 0 16px 32px hsla(230, 50%, 20%,.1) ;
     padding: 2rem 1.5rem;
     border-radius: 1.5rem;
+    min-width: 260px;
 }
 
 .card-content::after{
