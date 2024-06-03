@@ -15,7 +15,6 @@ body {
 .backgroud{
     position: absolute;
     inset: 0;
-    margin: 0;
 }
 .backgroud img{
     position: absolute;
@@ -24,7 +23,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin: 0;
 }
 
 
@@ -92,7 +90,7 @@ body {
 }
 .card-tooltip{
     position: absolute;
-    bottom: -2rem;
+    bottom: 0rem;
     padding-bottom: 5rem;
     transition: opacity .4s,bottom .4s cubic-bezier(.6,-.5,.3,1.5);
     pointer-events: none;
@@ -208,5 +206,5 @@ body {
 .card-article:hover .card-tooltip{
     opacity: 1;
     pointer-events: initial;
-    bottom: 4rem;
+    bottom: 0rem;
 }
