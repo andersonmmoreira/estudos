@@ -60,6 +60,7 @@ body {
     place-items: center;
     margin-inline: 1.5rem;
     padding-block: 7rem;
+    margin: 0px;
 }
 
 .card-article{
@@ -90,7 +91,7 @@ body {
 }
 .card-tooltip{
     position: absolute;
-    bottom: -2rem;
+    bottom: 0rem;
     padding-bottom: 5rem;
     transition: opacity .4s,bottom .4s cubic-bezier(.6,-.5,.3,1.5);
     pointer-events: none;
