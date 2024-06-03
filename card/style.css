@@ -90,7 +90,7 @@ body {
 }
 .card-tooltip{
     position: absolute;
-    bottom: 0rem;
+    bottom: -2rem;
     padding-bottom: 5rem;
     transition: opacity .4s,bottom .4s cubic-bezier(.6,-.5,.3,1.5);
     pointer-events: none;
@@ -206,5 +206,5 @@ body {
 .card-article:hover .card-tooltip{
     opacity: 1;
     pointer-events: initial;
-    bottom: 0rem;
+    bottom: 4rem;
 }
