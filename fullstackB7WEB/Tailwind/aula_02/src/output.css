@@ -554,9 +554,9 @@ video {
   --tw-contain-style:  ;
 }
 
-.bg-green-900 {
+.bg-green-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(20 83 45 / var(--tw-bg-opacity));
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
 
 .text-3xl {
@@ -571,11 +571,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-red-900 {
-  --tw-text-opacity: 1;
-  color: rgb(127 29 29 / var(--tw-text-opacity));
 }
 
 .underline {
