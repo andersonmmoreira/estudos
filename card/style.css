@@ -4,12 +4,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --vh: 1vh;
+  }
+
 body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     min-height: 100vh;
     margin: 0;
+    overflow: hidden;
+    max-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    height: calc(100vh);
     
 }
 .backgroud{
@@ -208,3 +216,4 @@ body {
     pointer-events: initial;
     bottom: 4rem;
 }
+
