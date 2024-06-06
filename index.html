@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCenter</title>
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  justify-content: center;
+  height: 120px;
+}
+.container {
+  width: 990px;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  align-items: center;
+}
+nav ul,
+nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul {
+  display: flex;
+}
+nav a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #727272;
+}
+nav .active a,
+nav a:hover {
+  background-color: #39aae1;
+  color: #ffffff;
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  background-image: url("../imagens/img1.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 670px;
+}
+.column {
+  flex-direction: column;
+}
+.banner_headline {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.banner_headline h1 {
+  color: #fff;
+  font-size: 70px;
+  text-shadow: 0px 1px 0px #555;
+  margin: 0;
+  padding: 0;
+  max-width: 350px;
+}
+.banner_headline h2 {
+  color: #fff;
+  font-size: 19px;
+  text-shadow: 0px 1px 0px #555;
+  margin: 0;
+  padding: 0;
+  max-width: 350px;
+  margin: top 30px;
+}
+.banner_options {
+  height: 210px;
+  display: flex;
+}
+.banner1,
+.banner2,
+.banner3 {
+  flex: 1;
+  color: #fff;
+  padding: 20px;
+}
+.banner1 {
+  background-color: #39aae1;
+}
+.banner2 {
+  background-color: #0079c7;
+}
+.banner3 {
+  background-color: #2b4c99;
+}
+.banner_title {
+  font-size: 21px;
+}
+.banner_desc {
+  font-size: 12px;
+  margin: 20px;
+  margin-bottom: 20px;
+}
+.banner_options a {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 5px;
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  flex-direction: column;
+}
+.banner_hour {
+  flex: 1;
+  font-size: 13px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
+  display: flex;
+}
+#geral {
+  display: flex;
+  justify-content: center;
+}
+#geral section {
+  flex: 2;
+}
+#geral aside {
+  flex: 1;
+}
+.widget_title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.widget_title_text {
+  color: #000;
+  font-size: 21px;
+  font-weight: bold;
+}
+.widget_title_bar {
+  width: 50px;
+  height: 2px;
+  background-color: #36a9e1;
+  margin-top: 10px;
+}
+.box_dep {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: left;
+  margin: -10px;
+}
+.box {
+  width: 155px;
+  height: 155px;
+  background-color: #36a9e1;
+  margin: 10px;
+  display: flex;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+article {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+}
+article a {
+  text-decoration: none;
+}
+article .news_data {
+  display: flex;
+}
+article .news_posted_at {
+  background-color: #2b4c99;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  margin-right: 2px;
+}
+article .news_comments {
+  background-color: #39aae1;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+}
+article .news_thumbnail {
+  margin-top: 30px;
+}
+article .news_thumbnail img {
+  width: 100%;
+  height: auto;
+}
+article .news_title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: black;
+  font-size: 23px;
+}
+article .news_resume {
+  color: #5c5c5c;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+footer {
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+}
+.footer_menu {
+  display: flex;
+  flex: 1;
+}
+.fm_1,
+.fm_2,
+.fm_3 {
+  flex: 1;
+  color: #fff;
+  padding: 30px;
+}
+.fm_1 {
+  background-color: #39aae1;
+}
+.fm_2 {
+  background-color: #0079c7;
+}
+.fm_3 {
+  background-color: #2b4c99;
+}
+.footer_area {
+  display: flex;
+}
+.footer_areaitem {
+  flex: 1;
+  color: #fff;
+}
+.flexColumn {
+  flex-direction: column;
+}
+footer .widget_title_text {
+  color: #fff;
+}
+.footer_copy {
+  color: #5c5c5c;
+  border-top: 1px solid #2c2c2c;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  margin-top: 30px;
+}
+.fm_1x {
+  font-size: 12px;
+}
+.fm_1x a {
+  text-decoration: none;
+  color: #fff;
+}
+.fm_1x a:hover {
+  border-bottom: 1px solid #fff;
+}
+.widget dados {
+    padding: 5px;
+    display: flex;    
+}
+.information {
+    
+    padding-bottom: 20px;
+    border-bottom: 1px solid #5c5c5c;
+}
+.dados {
+    text-align: inherit;
+    border-bottom: 1px solid #5c5c5c;
+    display: flex;
+    align-items: center;
+}
+.number {
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+#mail{
+    color: #0079c7;
+    border-bottom: 1px dashed #0079c7;;
+}
+#mail:hover {
+    border-bottom: 1px solid #0079c7;
+}
+aside a {
+    text-decoration: none;
+}
+.menuMobile {
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  
+}
+.mm_line {
+  height: 3px;
+  background-color: #36a9e1;
+}
+
+@media (max-width:600px) {
+  .banner_headline {
+    padding: 20px;    
+  }
+  .banner_headline h1 {
+    font-size: 55px;
+
+  }
+  .banner_headline h2 {
+    font-size: 17px;
+  }
+  .banner_options {
+    height: auto	;
+    flex-direction: column;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #geral section,
+  #geral aside {
+    padding: 20px;
+  }
+  .footer_menu {
+    flex-direction: column;
+  }
+  .footer_area {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .footer_copy {
+    padding: 20px;
+  }
+  header .container {
+    flex-direction: row;
+  }
+  nav ul {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #fff; 
+  }
+  header {
+    height: auto;
+  }
+  .logo {
+    padding-left: 20px;
+  }
+  .menuMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+        document.querySelector(".menuMobile").addEventListener("click", function(){
+        if(document.querySelector(".menu nav ul").style.display == 'flex') {
+            document.querySelector(".menu nav ul").style.display = 'none';
+        } else {
+            document.querySelector(".menu nav ul").style.display = 'flex';
+        }
+    });
+};
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="imagens/logo.png"></a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <div class="menuMobile">
+                        <div class="mm_line"></div>
+                        <div class="mm_line"></div>
+                        <div class="mm_line"></div>
+                    </div>
+                    <ul>        
+                        <li class="active"><a href="">Home</a></li>
+                        <li><a href="">BLOG</a></li>
+                        <li><a href="">PAGES</a></li>
+                        <li><a href="">DEPARTMENTS</a></li>
+                        <li><a href="">TIMETABLE</a></li>
+                        <li><a href="">GALLERY</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container column">
+            <div class="banner_headline">
+                <h1>Top notch experience</h1>
+                <h2>Medicenter is a responsive template perfect for all screen sizes</h2>
+            </div>
+            <div class="banner_options">
+                <div class="banner1">
+                    <div class="banner_title">Emergency Case</div>
+                    <div class="banner_desc">If you need a doctor urgently outside of medicenter opening hours, call emergency appointment number for emergency service.</div>
+                    <a href="">Read more</a>
+                </div>
+                <div class="banner2">
+                    <div class="banner_title">Doctors Timetable</div>
+                    <div class="banner_desc">Here at medicenter we have individual doctor's lists. Click read more below to see services and current timetable for our doctors.</div>
+                    <a href="">Read more</a>
+                </div>
+                <div class="banner3">
+                    <div class="banner_title">Opening Hours</div>
+                        <div class="banner_hour">
+                            <p>Monday - Friday</p> 
+                            <p>8.00 - 17.00</p>
+                            
+                        </div>
+                        <div class="banner_hour">
+                            <p>Saturday</p>
+                            <p>9.30 - 17.30</p>
+            
+                        </div>
+                        <div class="banner_hour">
+                            <p>Sunday</p>
+                            <p>9.30 - 15.00</p>
+            
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Conteudo Do Site -->
+    <section id="geral">
+        <div class="container">
+           <section>
+            <div class="widget">
+                <div class="widget_title">
+                    <div class="widget_title_text">Latest News</div>
+                    <div class="widget_title_bar"></div>
+                </div>
+                <div class="widget_body flex">
+                    <article>
+                        <a href="">
+                        <div class="news_data">
+                            <div class="news_posted_at">12 DEC 12</div>
+                            <div class="news_comments">2</div>
+                        </div>
+                        <div class="news_thumbnail">
+                            <img src="imagens/image_03.jpg" alt="">
+                        </div>
+                        <div class="news_title">
+                            Lorem ipsum dolor sit amat velum
+                        </div>
+                        <div class="news_resume">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit. Mauris adipiscing mauris.
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <div class="news_data">
+                            <div class="news_posted_at">12 DEC 12</div>
+                            <div class="news_comments">2</div>
+                        </div>
+                        <div class="news_thumbnail">
+                            <img src="imagens/image_03.jpg" alt="">
+                        </div>
+                        <div class="news_title">
+                            Lorem ipsum dolor sit amat velum
+                        </div>
+                        <div class="news_resume">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit. Mauris adipiscing mauris.
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <div class="news_data">
+                            <div class="news_posted_at">12 DEC 12</div>
+                            <div class="news_comments">2</div>
+                        </div>
+                        <div class="news_thumbnail">
+                            <img src="imagens/image_03.jpg" alt="">
+                        </div>
+                        <div class="news_title">
+                            Lorem ipsum dolor sit amat velum
+                        </div>
+                        <div class="news_resume">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit. Mauris adipiscing mauris.
+                        </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                        <div class="news_data">
+                            <div class="news_posted_at">12 DEC 12</div>
+                            <div class="news_comments">2</div>
+                        </div>
+                        <div class="news_thumbnail">
+                            <img src="imagens/image_03.jpg" alt="">
+                        </div>
+                        <div class="news_title">
+                            Lorem ipsum dolor sit amat velum
+                        </div>
+                        <div class="news_resume">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit. Mauris adipiscing mauris.
+                        </div>
+                        </a>
+                    </article>
+                </div>
+           </section>
+           <aside>
+                <div class="widget">
+                    <div class="widget_title">
+                        <div class="widget_title_text">Departaments</div>
+                        <div class="widget_title_bar"></div>
+                    </div>
+                    <div class="widget_body">
+                        <div class="box_dep">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget_title">
+                            <div class="widget_title_text">Make An Appointment</div>
+                            <div class="widget_title_bar"></div>
+                        </div>
+                        <div class="widget_body">
+                            <div class="information">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin.</div>
+                            <div class="dados">
+                                <span class="material-symbols-outlined">
+                                    call
+                                </span>
+                                <div class="number">by phone: 1-800-643-4300</div>
+                            </div>
+                            <div class="dados">
+                                <span class="material-symbols-outlined">
+                                    alternate_email
+                                </span>
+                                <div class="number">by e-mail: <a href="" id="mail">medicenter@mail.com</a></div>
+                            </div>
+                            <div class="dados">
+                                <span class="material-symbols-outlined">
+                                    description
+                                    </span>
+                                <div class="number">or fill in the form on our contact page</div>
+                            </div>
+                        </div>
+                </div>
+           </aside>
+        </div>
+    </section>
+    <footer>
+        <div class="container flexColumn">
+            <div class="footer_menu">
+                <div class="fm_1">
+                    <div class="fm_1t">Health Insurance</div><br>
+                    <div class="fm_1x"><a href="">Here in medicenter we have individual</a></div>
+                </div>
+                <div class="fm_2">
+                    <div class="fm_1t">Medical Records</div><br>
+                    <div class="fm_1x"><a href="">Here in medicenter we have individual</a></div>
+                </div>
+                <div class="fm_3">
+                    <div class="fm_1t">Online Bill Pay</div><br>
+                    <div class="fm_1x"><a href="">Here in medicenter we have individual</a></div>
+                </div>
+            </div>
+            <div class="footer_area">
+                <div class="footer_areaitem">
+                    <div class="widget">
+                        <div class="widget_title">
+                            <div class="widget_title_text">Medicenter Clinic</div>
+                            <div class="widget_title_bar"></div>
+                        </div>
+                        <div class="widget_body">
+                            ...
+                        </div>
+                </div>
+                </div>
+                <div class="footer_areaitem">
+                    <div class="widget">
+                        <div class="widget_title">
+                            <div class="widget_title_text">Latest Posts</div>
+                            <div class="widget_title_bar"></div>
+                        </div>
+                        <div class="widget_body">
+                            ...
+                        </div>
+                </div>
+                </div>
+                <div class="footer_areaitem">
+                    <div class="widget">
+                        <div class="widget_title">
+                            <div class="widget_title_text">Latest Tweets</div>
+                            <div class="widget_title_bar"></div>
+                        </div>
+                        <div class="widget_body">
+                            ...
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div class="footer_copy">
+                © Copyright - MediCenter Template by QuanticaLabs
+            </div>
+        </div>
+    </footer>
+        
+</body>
+</html>
