@@ -328,6 +328,9 @@ aside a {
   .container {
     flex-direction: column;
   }
+  .widget_title {
+    padding-top: 40px;
+  }
   #geral section,
   #geral aside {
     padding: 20px;
