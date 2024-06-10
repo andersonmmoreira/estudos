@@ -6,7 +6,8 @@ body {
     background-color: black;
     align-items: center;
     justify-content: center;
-
+    
+}
 #nao {
     position: absolute;
     transition: all 0.5s;
