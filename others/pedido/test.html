@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(to top, black, gray, white);
+        }
+        #sim {
+            background-color: aqua;
+            padding: 20px;
+            font-size: larger;
+            margin-right: 10px; /* adiciona espaço à direita do botão Sim */
+        }
+        #nao {
+            background-color: red;
+            padding: 20px;
+            font-size: larger;
+            position: absolute;
+            transition: all 0.5s;
+        }
+        #nao:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quer namorar comigo?</h1>
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+
+    <script>
+        document.getElementById('nao').addEventListener('mouseover', function() {
+            this.style.top = (Math.random() * (window.innerHeight - this.offsetHeight)) + 'px';
+            this.style.left = (Math.random() * (window.innerWidth - this.offsetWidth)) + 'px';
+        });
+    </script>
+</body>
+</html>
