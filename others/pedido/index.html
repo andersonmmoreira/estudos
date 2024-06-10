@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Vamos da uma?</h1>
+    <div class="container">
+    <a href="sim.html"><button id="sim">Sim</button></a>
+    <button id="nao">Não</button>
+    </div>
+   
+   
+   <script>
+        document.getElementById('nao').addEventListener('mouseover', function() {
+            this.style.top = Math.random() * window.innerHeight + 'px';
+            this.style.left = Math.random() * window.innerWidth + 'px';
+        });
+    </script>
+</body>
+</html>
