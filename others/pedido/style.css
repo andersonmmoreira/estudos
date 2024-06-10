@@ -36,6 +36,5 @@ h1 {
 }
 .yes {
     background-image: url('happy.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    
 }
