@@ -6,7 +6,7 @@
     <title>Aula_03</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .ade{
+        button{
             text-shadow: 1px 1px 1px #000;
         }
         .ola{
@@ -17,10 +17,28 @@
 <body class="bg-black text-center">
     <div class="flex">
         <div class="ola text-black text-4xl bg-red-600 border-4 border-b-green-500 w-1/4 h-36 p-12">Olá Mundo!</div>
-        <div class="ade font-bold text-blue-600 text-4xl bg-red-400 border-4 border-b-green-500 w-full h-36 p-12">Adeus Mundo!</div>
+        <div class="ade font-bold text-white text-4xl bg-red-400 border-4 border-b-green-500 w-full h-36 p-12">
+            <button class="bg-blue-500 rounded-xl px-5 py-2">Adeus Mundo!</button>
+        </div>
     </div>
         <div>
-            <div class="w-full h-40 border-4 border-white border-b-green-500 border-t-green-500 rounded-b-xl text-white p-12 font-bold text-4xl">Nicolas Sumiu!</div>
+            <div class="h-40 border-4 border-white border-b-green-600 border-t-green-500 rounded-b-xl p-12">
+                <div class="inline-block bg-amber-100 px-5 py-2 text-amber-600 border-l-4 border-amber-600">Você não tem mais acesso. <a href="" class="underline">Faça o upgrade da sua conta!</a></div>
+            </div>
+            <div>
+                <div class="bg-white inline-block m-2 p-8 rounded-xl">
+                    <div>
+                        <div>
+                        <img class="h-14 w-14 rounded-full mb-6" src="https://tailwindui.com/img/avatar-3.jpg" alt="">
+                        </div>
+                        <div class="inline-block ml-5 pb-4">
+                        <div class="text-black">Rafaela Silva</div>
+                        <div class="text-gray-400">Te mandou um convite!</div></div>
+                    </div>
+                    <button class="bg-blue-500 px-5 py-2 text-white rounded-md">Acessar</button>
+                    <button class="border border-gray-500 px-5 py-2 text-black rounded-md ml-3">Negar</button>
+                </div>
+            </div>
         </div>
 </body>
 </html>
