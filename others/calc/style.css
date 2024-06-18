@@ -1,0 +1,51 @@
+#calculadora {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    background-color: grey;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.75);
+}
+
+#visor {
+    width: 90%;
+    height: 50px;
+    border: 2px solid black;
+    margin: 0 auto;
+    background-color: #5b715d;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 36px;
+}
+
+#visorInfo {
+    padding: 0 10px;
+}
+
+#buttonGrid {
+    border-top: 1px solid darkgray;
+    margin: 20px auto;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 15px;
+    vertical-align: middle;
+}
+
+.button, .button-ligar, .button-result {
+    text-align: center;
+    width: 75%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: lightgray;
+    position: relative;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.button-result {
+    background-color: rgba(200,100,100,1);
+}
