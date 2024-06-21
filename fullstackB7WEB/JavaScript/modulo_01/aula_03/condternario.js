@@ -7,7 +7,7 @@ console.log(isAdult);
 
 // Switch
 
-let profession = "atleta";
+let profession = "fiscal";
 
 console.log("Profissão: " + profession)
 
