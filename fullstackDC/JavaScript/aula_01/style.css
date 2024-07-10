@@ -1,0 +1,12 @@
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Define a altura da página inteira */
+  }
+  
+  .title-container h1 {
+    font-size: 3rem; /* Define o tamanho da fonte do título */
+    font-weight: bold;
+    color: #333; /* Define a cor do título */
+  }
