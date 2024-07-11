@@ -6,3 +6,4 @@ let nomeCompleto = {nome: "Anderson Moreira", idade: 37} // obiject
 // comando para executar no console
 console.log(nome)
 console.log(idade)
+console.log(nomeCompleto)
