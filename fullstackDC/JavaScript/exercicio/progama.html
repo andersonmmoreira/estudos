@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Soma</title>
+</head>
+<body>
+
+<script>
+  // Função para solicitar 4 valores, converter para inteiro, somar e exibir o total
+  function calcularSoma() {
+    // Solicita 4 valores ao usuário
+    var valor1 = prompt("Digite o primeiro valor:");
+    var valor2 = prompt("Digite o segundo valor:");
+    var valor3 = prompt("Digite o terceiro valor:");
+    var valor4 = prompt("Digite o quarto valor:");
+
+    // Converte os valores para inteiros
+    var numero1 = parseInt(valor1);
+    var numero2 = parseInt(valor2);
+    var numero3 = parseInt(valor3);
+    var numero4 = parseInt(valor4);
+
+    // Soma os valores
+    var total = numero1 + numero2 + numero3 + numero4;
+
+    // Exibe o total em um alerta
+    alert("OLÁ, SEU TOTAL É " + total);
+  }
+
+  // Chama a função calcularSoma ao carregar a página
+  calcularSoma();
+</script>
+
+</body>
+</html>
