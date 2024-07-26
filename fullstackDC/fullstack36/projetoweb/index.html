@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panera Bread</title>
+    <!-- Importando a fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Swiper CSS (para o carrossel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .bounce-animation {
+            animation: bounce 1s infinite;
+        }
+
+        .logo {
+            width: 150px; /* Ajuste o tamanho da logo aqui */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        .background {
+            background-size: cover; /* Ajusta o fundo para cobrir o elemento */
+            background-position: center; /* Centraliza o fundo */
+            background-attachment: fixed; /* Mantém o fundo fixo enquanto a página rola */
+            height: 100vh; /* Faz com que o fundo ocupe a altura total da página */
+            width: 100vw; /* Faz com que o fundo ocupe a largura total da página */
+        }
+
+        .carousel-container {
+            width: 100vw; /* Largura do carrossel igual à largura da viewport */
+            height: 60vh; /* Ajuste a altura conforme necessário */
+            position: relative;
+            margin-top: 50px; /* Ajusta o espaço superior conforme necessário */
+        }
+
+        .swiper-slide img {
+            width: 100%; /* Faz com que as imagens ocupem toda a largura do slide */
+            height: 100%; /* Faz com que as imagens ocupem toda a altura do slide */
+            object-fit: cover; /* Ajusta o tamanho da imagem para cobrir o slide */
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff; /* Cor dos botões de navegação */
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff; /* Cor dos pontos de navegação */
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #4caf50; /* Cor do ponto ativo de navegação */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="background" style="background-image: url('img/background.jpg');">
+        <!-- Logo com fundo branco -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 bg-white p-2 rounded-lg shadow-lg">
+            <img src="img/logo.png" alt="Logo da Panera Bread" class="mx-auto logo">
+        </div>
+        
+        <!-- Texto e Contato -->
+        <div class="absolute left-8 top-1/2 transform -translate-y-1/2">
+            <h1 class="text-5xl font-bold mb-4 text-white" style="font-family: 'Love Ya Like A Sister', cursive;">O melhor pão <br> da região!</h1>
+            <p class="text-4g mb-6 text-white"><i class="fas fa-phone-alt"></i> 85 98657.4578</p>
+            <a href="https://wa.me/5585986574578" class="text-green-600">
+                <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Carrossel abaixo do texto -->
+    <div class="carousel-container">
+        <div class="swiper-container h-full">
+            <div class="swiper-wrapper h-full">
+                <div class="swiper-slide">
+                    <img src="img/carousel1.jpg" alt="Imagem 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/carousel2.jpg" alt="Imagem 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/carousel3.jpg" alt="Imagem 3">
+                </div>
+            </div>
+            <!-- Navegação do carrossel -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp com animação de bounce -->
+    <a href="https://wa.me/5585986574578" class="fixed bottom-4 right-4 p-2 rounded-full transition duration-300 bounce-animation" aria-label="Contate-nos pelo WhatsApp">
+        <img src="img/wp.jpg" alt="Botão do WhatsApp" class="w-12 h-12">
+    </a>
+
+    <!-- Swiper JS (para o carrossel) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade', // Efeito de transição
+            speed: 600, // Velocidade da transição
+            autoplay: {
+                delay: 3000, // Tempo entre slides
+                disableOnInteraction: false,
+            },
+            loop: true, // Loop contínuo
+        });
+    </script>
+</body>
+</html>
