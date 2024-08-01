@@ -11,6 +11,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       height: 100vh;
     }
 
@@ -20,11 +21,12 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
       width: 300px;
+      max-width: 100%;
       text-align: center;
-      margin: 20px;
+      margin: 10px;
     }
 
-    h1 {
+    h1, h2 {
       margin-bottom: 20px;
     }
 
@@ -61,6 +63,21 @@
       flex-direction: column;
       align-items: center;
     }
+
+    .comparativo {
+      background-color: #e0e0e0;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-align: left;
+      width: 300px; /* Largura correspondente ao quadro de cálculos */
+      max-width: 100%;
+    }
+
+    .destaque {
+      color: red;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -79,6 +96,12 @@
     <div id="resultadoIMC" class="resultado"></div>
     <div id="resultadoTMB" class="resultado"></div>
   </div>
+
+  <div class="container comparativo" id="comparativo">
+    <h2>Comparativo</h2>
+    <div id="comparativoIMC"></div>
+    <div id="comparativoTMB"></div>
+  </div>
 </div>
 
 <script>
@@ -89,6 +112,8 @@
     var sexo = document.getElementById('sexo').value;
     var resultadoIMC = document.getElementById('resultadoIMC');
     var resultadoTMB = document.getElementById('resultadoTMB');
+    var comparativoIMC = document.getElementById('comparativoIMC');
+    var comparativoTMB = document.getElementById('comparativoTMB');
 
     if (isNaN(peso) || peso <= 0 || isNaN(parseFloat(altura)) || parseFloat(altura) <= 0 || isNaN(idade) || idade <= 0) {
       resultadoIMC.innerText = "Por favor, insira valores válidos para peso, altura e idade.";
@@ -123,8 +148,6 @@
 
     // Calcular TMB
     var tmb;
-
-    // Fórmula de Harris-Benedict
     if (sexo === "masculino") {
       tmb = 88.36 + (13.4 * peso) + (4.8 * altura * 100) - (5.7 * idade); // altura convertida para cm
     } else if (sexo === "feminino") {
@@ -132,6 +155,25 @@
     }
 
     resultadoTMB.innerText = "Sua Taxa de Metabolismo Basal é " + tmb.toFixed(2) + " calorias/dia.";
+
+    // Comparativo de IMC e TMB
+    var pesoIdealMin = 18.5 * (altura * altura);
+    var pesoIdealMax = 24.9 * (altura * altura);
+
+    comparativoIMC.innerHTML = "IMC Ideal: 18.5 - 24.9<br>Peso Ideal: " + pesoIdealMin.toFixed(2) + "kg - " + pesoIdealMax.toFixed(2) + "kg";
+    comparativoTMB.innerHTML = "Para um peso ideal, o TMB estimado seria aproximadamente " + calcularTMBIdeal(sexo, pesoIdealMin, pesoIdealMax, altura, idade).toFixed(2) + " - " + calcularTMBIdeal(sexo, pesoIdealMax, pesoIdealMax, altura, idade).toFixed(2) + " calorias/dia.";
+
+    // Destaques
+    comparativoIMC.innerHTML += "<br><br><span class='destaque'>Seu IMC: " + imc.toFixed(2) + "</span>";
+    comparativoTMB.innerHTML += "<br><span class='destaque'>Seu TMB: " + tmb.toFixed(2) + " calorias/dia</span>";
+  }
+
+  function calcularTMBIdeal(sexo, pesoIdealMin, pesoIdealMax, altura, idade) {
+    if (sexo === "masculino") {
+      return 88.36 + (13.4 * (pesoIdealMin + pesoIdealMax) / 2) + (4.8 * altura * 100) - (5.7 * idade);
+    } else if (sexo === "feminino") {
+      return 447.6 + (9.2 * (pesoIdealMin + pesoIdealMax) / 2) + (3.1 * altura * 100) - (4.3 * idade);
+    }
   }
 </script>
 
