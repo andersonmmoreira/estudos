@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de IMC e TMB</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .resultado {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="container">
+    <h1>Calculadora de IMC e TMB</h1>
+    <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
+    <input type="number" id="altura" placeholder="Altura (cm ou m)" step="0.01" required>
+    <input type="number" id="idade" placeholder="Idade (anos)" required>
+    <select id="sexo">
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+    </select>
+    <button onclick="calcularIMC_TMB()">Calcular IMC e TMB</button>
+    <div id="resultadoIMC" class="resultado"></div>
+    <div id="resultadoTMB" class="resultado"></div>
+  </div>
+</div>
+
+<script>
+  function calcularIMC_TMB() {
+    var peso = parseFloat(document.getElementById('peso').value);
+    var altura = document.getElementById('altura').value;
+    var idade = parseInt(document.getElementById('idade').value);
+    var sexo = document.getElementById('sexo').value;
+    var resultadoIMC = document.getElementById('resultadoIMC');
+    var resultadoTMB = document.getElementById('resultadoTMB');
+
+    if (isNaN(peso) || peso <= 0 || isNaN(parseFloat(altura)) || parseFloat(altura) <= 0 || isNaN(idade) || idade <= 0) {
+      resultadoIMC.innerText = "Por favor, insira valores válidos para peso, altura e idade.";
+      return;
+    }
+
+    // Calcular IMC
+    if (!altura.includes('.')) {
+      altura = parseFloat(altura) / 100; // Converte para metros
+    } else {
+      altura = parseFloat(altura);
+    }
+
+    var imc = peso / (altura * altura);
+    var classificacao;
+
+    if (imc < 18.5) {
+      classificacao = "Muito Magro";
+    } else if (imc >= 18.5 && imc <= 24.9) {
+      classificacao = "Normal";
+    } else if (imc >= 25.0 && imc <= 29.9) {
+      classificacao = "Sobrepeso";
+    } else if (imc >= 30.0 && imc <= 34.9) {
+      classificacao = "Obeso Grau I";
+    } else if (imc >= 35.0 && imc <= 39.9) {
+      classificacao = "Obeso Grau II";
+    } else if (imc >= 40.0) {
+      classificacao = "Obeso Grau III ou Mórbido";
+    }
+
+    resultadoIMC.innerText = "Seu IMC é " + imc.toFixed(2) + ". Classificação: " + classificacao;
+
+    // Calcular TMB
+    var tmb;
+
+    // Fórmula de Harris-Benedict
+    if (sexo === "masculino") {
+      tmb = 88.36 + (13.4 * peso) + (4.8 * altura * 100) - (5.7 * idade); // altura convertida para cm
+    } else if (sexo === "feminino") {
+      tmb = 447.6 + (9.2 * peso) + (3.1 * altura * 100) - (4.3 * idade); // altura convertida para cm
+    }
+
+    resultadoTMB.innerText = "Sua Taxa de Metabolismo Basal é " + tmb.toFixed(2) + " calorias/dia.";
+  }
+</script>
+
+</body>
+</html>
