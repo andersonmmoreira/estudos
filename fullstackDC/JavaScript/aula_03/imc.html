@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cálculo de IMC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .resultado {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Calculadora de IMC</h1>
+  <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
+  <input type="number" id="altura" placeholder="Altura (cm ou m)" step="0.01" required>
+  <button onclick="calcularIMC()">Calcular IMC</button>
+  <div id="resultado" class="resultado"></div>
+</div>
+
+<script>
+  function calcularIMC() {
+    var peso = parseFloat(document.getElementById('peso').value);
+    var altura = document.getElementById('altura').value;
+    var resultado = document.getElementById('resultado');
+
+    if (isNaN(peso) || peso <= 0 || isNaN(parseFloat(altura)) || parseFloat(altura) <= 0) {
+      resultado.innerText = "Por favor, insira valores válidos para peso e altura.";
+      return;
+    }
+
+    // Se altura for um número inteiro ou não tiver um ponto decimal, assumir que está em centímetros
+    if (!altura.includes('.')) {
+      altura = parseFloat(altura) / 100; // Converte para metros
+    } else {
+      altura = parseFloat(altura);
+    }
+
+    var imc = peso / (altura * altura);
+    var classificacao;
+
+    if (imc < 18.5) {
+      classificacao = "Muito Magro";
+    } else if (imc >= 18.5 && imc <= 24.9) {
+      classificacao = "Normal";
+    } else if (imc >= 25.0 && imc <= 29.9) {
+      classificacao = "Sobrepeso";
+    } else if (imc >= 30.0 && imc <= 34.9) {
+      classificacao = "Obeso Grau I";
+    } else if (imc >= 35.0 && imc <= 39.9) {
+      classificacao = "Obeso Grau II";
+    } else if (imc >= 40.0) {
+      classificacao = "Obeso Grau III ou Mórbido";
+    }
+
+    resultado.innerText = "Seu IMC é " + imc.toFixed(2) + ".\nClassificação: " + classificacao;
+  }
+</script>
+
+</body>
+</html>

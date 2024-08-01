@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+  function calcularIMC() {
+  let peso = parseFloat(prompt("Digite seu peso em kg:"));
+  let altura = parseFloat(prompt("Digite sua altura em metros:"));
+
+  // Validação básica
+  while (isNaN(peso) || peso <= 0 || isNaN(altura) || altura <= 0) {
+    alert("Por favor, insira valores válidos para peso e altura.");
+    peso = parseFloat(prompt("Digite seu peso em kg:"));
+    altura = parseFloat(prompt("Digite sua altura em metros:"));
+  }
+
+  // Calcula o IMC
+  const imc = peso / (altura * altura);
+
+  // Classifica o IMC
+  let classificacao;
+  if (imc < 18.5) {
+    classificacao = "Muito Magro";
+  } else if (imc <= 24.9) {
+    classificacao = "Normal";
+  } else if (imc <= 29.9) {
+    classificacao = "Sobrepeso";
+  } else if (imc <= 34.9) {
+    classificacao = "Obesidade Grau I";
+  } else if (imc <= 39.9) {
+    classificacao = "Obesidade Grau II";
+  } else {
+    classificacao = "Obesidade Grau III (Mórbida)";
+  }
+
+  // Exibe o resultado em um alerta
+  alert(`Seu IMC é: ${imc.toFixed(2)} e você está classificado como ${classificacao}`);
+}
+
+calcularIMC();
+
+    </script>
+</body>
+</html>
