@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Completa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+        <div class="mb-4">
+            <input type="text" id="valor1" placeholder="Digite o primeiro número" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+        </div>
+        <div class="mb-4">
+            <input type="text" id="valor2" placeholder="Digite o segundo número" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+        </div>
+        <div class="mb-4">
+            <select id="operacao" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option value="a">Adição</option>
+                <option value="s">Subtração</option>
+                <option value="m">Multiplicação</option>
+                <option value="d">Divisão</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <button onclick="executarPrograma()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Resultado</button>
+        </div>
+        <div id="resultado" class="bg-green-500 text-white p-4 rounded">
+            Sem resultado
+        </div>
+    </div>
+    <script>
+        function somar(v1, v2) {
+            const resultado = parseFloat(v1) + parseFloat(v2);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function subtrair(v1, v2) {
+            const resultado = parseFloat(v1) - parseFloat(v2);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function multiplicar(v1, v2) {
+            const resultado = parseFloat(v1) * parseFloat(v2);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function dividir(v1, v2) {
+            if (parseFloat(v2) === 0) {
+                document.getElementById("resultado").innerHTML = "Divisão por zero não é permitida";
+                return;
+            }
+            const resultado = parseFloat(v1) / parseFloat(v2);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function executarPrograma() {
+            const valor1 = document.getElementById("valor1").value;
+            const valor2 = document.getElementById("valor2").value;
+            const operacao = document.getElementById("operacao").value;
+            switch (operacao) {
+                case "a":
+                    somar(valor1, valor2);
+                    break;
+                case "s":
+                    subtrair(valor1, valor2);
+                    break;
+                case "m":
+                    multiplicar(valor1, valor2);
+                    break;
+                case "d":
+                    dividir(valor1, valor2);
+                    break;
+                default:
+                    document.getElementById("resultado").innerHTML = "Operação inválida";
+            }
+        }
+    </script>
+</body>
+</html>
